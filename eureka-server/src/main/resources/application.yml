@@ -1,0 +1,15 @@
+server:
+  port: 8761 # 端口
+spring:
+  application:
+    name: eureka-server # 应用名称(集群下相同)
+# 配置 Eureka Server 注册中心
+eureka:
+  instance:
+    hostname: eureka01 # 主机名，不配置的时候将根据操作系统的主机名来获取
+  client:
+   #  registerWithEureka: false
+    #   fetchRegistry: false
+      # 设置服务注册中心地址，指向另一个注册中心
+    service-url: # 注册中心对外暴露的注册地址
+      defaultZone: http://localhost:8762/eureka/, http://localhost:8763/eureka/, http://localhost:8764/eureka/

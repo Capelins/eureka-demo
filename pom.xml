@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xxx</groupId>
+    <artifactId>eureka-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>eureka-server</module>
+        <module>eureka-server02</module>
+        <module>eureka-server03</module>
+        <module>eureka-server04</module>
+    </modules>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.5</version>
+    </parent>
+
+    <properties>
+        <spring-cloud.version>2022.0.3</spring-cloud.version>
+
+    </properties>
+
+    <!--项目管理 父项目只是声明依赖， 子项目需要写明需要的依赖是什么 -->
+   <dependencyManagement>
+       <dependencies>
+           <dependency><!-- spring cloud-->
+               <groupId>org.springframework.cloud</groupId>
+               <artifactId>spring-cloud-dependencies</artifactId>
+               <version>${spring-cloud.version}</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+
+       </dependencies>
+
+   </dependencyManagement>
+</project>
